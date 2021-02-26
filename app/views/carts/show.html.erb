@@ -1,0 +1,33 @@
+
+<% @order_items.each do |item| %>
+
+    <h2><%= item.product.product_name %></h2>
+    
+
+
+    <%= form_for item, remote: true do |f| %>
+
+
+
+        <%= f.hidden_field :product_id, :value => item.product.id %>
+        <%= f.number_field :quantity, :value => item.quantity.to_i %>
+        <%= link_to "Update Items", shops_path%>
+
+        <%= link_to "Remove Items", order_item_path(item), method: :delete, remote: true%>
+        
+    <% end %>
+    <%= link_to "click to confirm delete", carts_path%>
+
+    <h4>price per product: <%= item.product.price %></h4>
+
+    <h4>Subtotal: <%= item.total %></h4>
+    <h1 class="mb-5">  </h1>
+
+
+<% end %>
+<h1 class="mb-5">  </h1>
+
+<h2>total amount:  <%= current_order.subtotal %></h2>
+
+<%= link_to "back", shops_path%>
+<%= link_to "Update Address", shops_path%>
