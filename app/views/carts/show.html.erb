@@ -1,5 +1,7 @@
-
+<h1 class="mb-5">  </h1>
+<%= link_to '.', finals_path  %>
 <% @order_items.each do |item| %>
+
 
     <h2><%= item.product.product_name %></h2>
     
@@ -11,16 +13,16 @@
 
         <%= f.hidden_field :product_id, :value => item.product.id %>
         <%= f.number_field :quantity, :value => item.quantity.to_i %>
-        <%= link_to "Update Items", shops_path%>
+        <%= link_to "Update Items", shops_path, class:"btn btn-outline-secondary" %>
 
-        <%= link_to "Remove Items", order_item_path(item), method: :delete, remote: true%>
+        <%= link_to "Remove Items", order_item_path(item), method: :delete, remote: true, class:"btn btn-outline-secondary" %>
         
     <% end %>
-    <%= link_to "click to confirm delete", carts_path%>
+    <%= link_to "click to confirm delete", carts_path, class:"btn btn-outline-secondary" %>
 
-    <h4>price per product: <%= item.product.price %></h4>
+    <h5>price per product: <%= item.product.price %></h5>
 
-    <h4>Subtotal: <%= item.total %></h4>
+    <h5>Subtotal: <%= item.total %></h5>
     <h1 class="mb-5">  </h1>
 
 
@@ -29,5 +31,5 @@
 
 <h2>total amount:  <%= current_order.subtotal %></h2>
 
-<%= link_to "back", shops_path%>
-<%= link_to "Update Address", details_path%>
+<%= link_to "back", shops_path, class:"btn btn-info" %>
+<%= link_to "Update Address", details_path, class:"btn btn-info" %>

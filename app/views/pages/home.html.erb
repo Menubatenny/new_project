@@ -1,6 +1,7 @@
 
 
 <% if current_user %>
+<h1 class="mb-5">  </h1>
 <%= link_to ".",products_path%>
 <h1>Welcome  <%= current_user.username%>,</h1>
 <h1>Create your order!!!</h1>
@@ -20,7 +21,7 @@
 <div class="card">
   <div class="card-body">
    
-    <%= link_to " REGISTER  ", new_user_registration_path ,  class:"btn btn-info" %> 
+    <%= link_to " REGISTER  ", new_user_registration_path , class:"btn btn-info" %> 
     <h1 class="mb-3"> or  </h1>
     <%= link_to "  LOG IN ", new_user_session_path , class:"btn btn-info"%>
  

@@ -1,5 +1,4 @@
-<h1>Shops#index</h1>
-<p>Find me in app/views/shops/index.html.erb</p>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
@@ -18,7 +17,7 @@
       <tr>
         <td><%= product.product_name %></td>
         <td><%= product.price %></td>
-        <td><%= link_to 'Show', shop_path(product) %></td>
+        <td><%= link_to 'Show', shop_path(product), class:"btn btn-outline-secondary" %></td>
 
 
          <td>
