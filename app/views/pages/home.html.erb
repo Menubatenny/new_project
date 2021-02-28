@@ -2,7 +2,7 @@
 
 <% if current_user %>
 <h1 class="mb-5">  </h1>
-<%= link_to ".",products_path%>
+<%= link_to '.', finals_path  %>
 <h1>Welcome  <%= current_user.username%>,</h1>
 <h1>Create your order!!!</h1>
 <h1 class="mb-5">  </h1>
@@ -16,13 +16,18 @@
 <%= link_to "Log Out", destroy_user_session_path,class:"btn btn-info", method: :delete %>
 </p>
 <% else %>
-<h1> Log in or Register</h1>
+
 <h1 class="mb-5">   </h1>
 <div class="card">
   <div class="card-body">
-   
+  <h3>Hi, Are you new to this site?</h3>
+then register your account :)
+   <h1 class="mb-3">   </h1>
     <%= link_to " REGISTER  ", new_user_registration_path , class:"btn btn-info" %> 
-    <h1 class="mb-3"> or  </h1>
+    <h1 class="mb-3">   </h1>
+    <h3>If You have an existing account </h3>
+    then Log in to your account :)
+    <h1 class="mb-3">   </h1>
     <%= link_to "  LOG IN ", new_user_session_path , class:"btn btn-info"%>
  
   </div>
