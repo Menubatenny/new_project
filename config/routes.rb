@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :details
   get '/carts' => 'carts#show', as: 'carts'
   get '/confirm' => 'details#confirm', as: 'confirm'
+  get '/detai' => 'details#index', as: 'detai'
   get '/shops' => 'shops#index', as: 'shops'
   get 'shops/show'
   resources :products
