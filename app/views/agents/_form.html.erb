@@ -1,0 +1,38 @@
+<%= form_with(model: agent) do |form| %>
+  <% if agent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(agent.errors.count, "error") %> prohibited this agent from being saved:</h2>
+
+      <ul>
+        <% agent.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :agent_name %>
+    <%= form.text_field :agent_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'delivery_status_pending pickup', 'Pending pickup' %>
+    <%= check_box_tag 'agent[delivery_status][]','Pickup pending', checked('Pickup pending'), id:'delivery_status_pending_pickup'%>
+
+    <%= label_tag 'delivery_status_in_transit', 'In transit' %>
+    <%= check_box_tag 'agent[delivery_status][]','In transit', checked('In transit'), id:'delivery_status_in_transit'%>
+
+    <%= label_tag 'delivery_status_delivered', 'Delivered' %>
+    <%= check_box_tag 'agent[delivery_status][]','Delivered', checked('Delivered'), id:'delivery_status_delivered'%>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

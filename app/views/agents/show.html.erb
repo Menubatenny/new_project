@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Agent name:</strong>
+  <%= @agent.agent_name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @agent.phone_number %>
+</p>
+
+<p>
+  <strong>Delivery status:</strong>
+  <%= @agent.delivery_status %>
+</p>
+
+<%= link_to 'Edit', edit_agent_path(@agent) , class:"btn btn-info" %> |
+<%= link_to 'Back', agents_path, class:"btn btn-info"  %>
